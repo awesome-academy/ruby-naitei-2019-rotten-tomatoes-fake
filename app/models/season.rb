@@ -8,4 +8,7 @@ class Season < ApplicationRecord
 
   validates :info, presence: true,
     length: {maximum: Settings.seasons.info_max_length}
+
+  scope :tv_show, ->(tv_show_id){where tv_show_id: tv_show_id}
+  scope :tv_show_critic_score, ->(id){tv_show(id)}
 end

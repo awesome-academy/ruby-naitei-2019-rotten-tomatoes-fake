@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :users, except: %i(new create)
   resources :celebrities
   resources :news
+  resources :reviews, except: %i(edit update)
 end
